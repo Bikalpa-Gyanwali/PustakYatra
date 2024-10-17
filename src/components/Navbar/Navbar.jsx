@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from "../../assets/website/logo.png";
+import DarkMode from './DarkMode';
 import { MdLogin } from "react-icons/md";
 import { FaCaretDown } from "react-icons/fa";
 
@@ -45,7 +46,11 @@ const Navbar = () => {
             </a>
         </div>
 
-        <div className="flex justify-between items-center gap-4 font-semibold">
+        <div className="flex justify-between items-center gap-4">
+              <div>
+                <DarkMode />
+              </div>
+              
             <ul className="hidden sm:flex items-center gap-4">
                 {Menu.map((menu) => (
                     <li key={menu.id}>

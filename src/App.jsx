@@ -1,11 +1,15 @@
 import React from 'react'
 import Navbar from "./components/Navbar/Navbar";
+import Home from './components/Home/Home';
+import BestBooks from './components/BestBooks/BestBooks';
 
 const App = () => {
   return (
     <>
     <div>
       <Navbar />
+      <Home />
+      <BestBooks />
     </div>
     </>
   )

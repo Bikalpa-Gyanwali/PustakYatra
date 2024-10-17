@@ -13,6 +13,18 @@ export default {
         dark: "#1e1e1e",
         light: "#f5f5f5",
       },
+      keyframes: {
+        slide: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '33%': { transform: 'translateX(-100%)' },
+          '66%': { transform: 'translateX(-200%)' },
+        },
+      },
+
+      animation: {
+        slide: 'slide 12s ease-in-out infinite',
+      },
+      
       container: {
         center: true,
         padding: {
