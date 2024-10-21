@@ -11,9 +11,11 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar /> {/* Navbar stays common */}
         <Routes>
+          {/* Route to Home Page */}
           <Route path="/" element={<Home />} />
+          {/* Route to Other Pages */}
           <Route path="/about" element={<About />} />
           <Route path="/best-books" element={<BestBooks />} />
           <Route path="/register" element={<Register />} />
