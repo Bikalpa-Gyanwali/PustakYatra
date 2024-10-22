@@ -6,6 +6,7 @@ import About from './components/AboutUs/About';
 import BestBooks from './components/BestBooks/BestBooks';
 import Register from './components/RegisterForm/Register';
 import Login from './components/RegisterForm/Login';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/best-books" element={<BestBooks />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard/>} />
         </Routes>
       </div>
     </Router>
