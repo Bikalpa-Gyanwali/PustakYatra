@@ -1,11 +1,11 @@
-const express = require("express"); 
+const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require('bcryptjs');
 const dotenv = require("dotenv");
-const User = require('./models/User.js'); 
+const User = require('./models/User.js');
 const jwt = require('jsonwebtoken'); // Add JWT for token-based auth
-
+const BookRoute = require('./routes/BookRoute.js')
 dotenv.config(); // Load environment variables
 const app = express();
 
@@ -14,7 +14,8 @@ app.use(cors({
     methods: ["GET", "POST"], // Specify allowed methods
     credentials: true // Allow credentials if needed
 }));
-app.use(express.json()); 
+app.use(express.json());
+app.use('/api', BookRoute)
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URL)
@@ -22,16 +23,16 @@ mongoose.connect(process.env.MONGO_URL)
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
 // Register route
-app.post('/register', async (req, res) => {
+app.post('/register', async(req, res) => {
     try {
         const { username, email, password } = req.body;
 
         // Check if user with email or username already exists
         const existingUser = await User.findOne({ $or: [{ email }, { username }] });
         if (existingUser) {
-            const errorMsg = existingUser.email === email 
-                ? 'Email already exists' 
-                : 'Username already exists';
+            const errorMsg = existingUser.email === email ?
+                'Email already exists' :
+                'Username already exists';
             return res.status(400).json({ message: errorMsg });
         }
 
@@ -54,7 +55,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Login route
-app.post('/login', async (req, res) => {
+app.post('/login', async(req, res) => {
     try {
         const { username, password } = req.body;
 

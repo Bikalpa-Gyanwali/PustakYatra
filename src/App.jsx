@@ -8,6 +8,7 @@ import Register from './components/RegisterForm/Register';
 import Login from './components/RegisterForm/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 
+import BookList from './components/Books/Books';
 const App = () => {
   return (
     <Router>
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/books' element={<BookList/>} />
         </Routes>
       </div>
     </Router>
