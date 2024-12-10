@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AllBooksRoute } from '../../ApiRoute';
 import styled from 'styled-components';
 import BookCard from './BookCard';
-
+import SearchBar from './Search';
 const BookList = () => {
   const [books, setBooks] = useState([]); // Initialize as an empty array
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,9 @@ const BookList = () => {
   if (error) return <p>{error}</p>;
 
   return (
+
     <div>
+      <SearchBar />
       {/* <h1>Books List</h1>
       <ul>
         {books.length > 0 ? (

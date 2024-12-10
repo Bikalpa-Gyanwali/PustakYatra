@@ -3,9 +3,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require('bcryptjs');
 const dotenv = require("dotenv");
+
 const User = require('./models/User.js');
 const jwt = require('jsonwebtoken'); // Add JWT for token-based auth
-const BookRoute = require('./routes/BookRoute.js')
+const BookRoute = require('./routes/BookRoute.js');
+const topBooks = require('./routes/BookRoute.js')
+const BookIdInfo = require("./routes/BookRoute.js");
 dotenv.config(); // Load environment variables
 const app = express();
 
@@ -16,6 +19,10 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use('/api', BookRoute)
+app.use('/api', BookIdInfo)
+app.use('/api', topBooks)
+
+
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URL)
