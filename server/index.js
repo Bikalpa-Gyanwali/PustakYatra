@@ -30,17 +30,22 @@ mongoose.connect(process.env.MONGO_URL)
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
 // Register route
-app.post('/register', async(req, res) => {
+app.post('/register', async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, category } = req.body;
 
         // Check if user with email or username already exists
         const existingUser = await User.findOne({ $or: [{ email }, { username }] });
         if (existingUser) {
-            const errorMsg = existingUser.email === email ?
-                'Email already exists' :
-                'Username already exists';
+            const errorMsg = existingUser.email === email
+                ? 'Email already exists'
+                : 'Username already exists';
             return res.status(400).json({ message: errorMsg });
+        }
+
+        // Validate category
+        if (!category) {
+            return res.status(400).json({ message: 'Category is required' });
         }
 
         // Hash password
@@ -51,7 +56,8 @@ app.post('/register', async(req, res) => {
         const newUser = new User({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            category // Save the category
         });
 
         await newUser.save();
@@ -60,6 +66,7 @@ app.post('/register', async(req, res) => {
         res.status(500).json({ message: "Something went wrong", error });
     }
 });
+
 
 // Login route
 app.post('/login', async(req, res) => {

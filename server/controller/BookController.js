@@ -3,6 +3,8 @@ const Book = require('../models/Books')
 const User = require('../models/User')
 const mongoose = require('mongoose');
 const BookDetail = require('../models/Detail')
+const info = require('../models/Detail')
+
     // module.exports.BookInfo = async(req, res, next) => {
     //     try {
     //         const books = await Book.find().limit(12);
@@ -106,3 +108,16 @@ exports.getBookById = async(req, res, next) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+exports.getBooksByCategory = async (req, res) => {
+    const { categories } = req.body; // Array of categories
+    try {
+      const books = await Info.find({
+        categories: { $in: categories.map((cat) => new RegExp(cat, 'i')) },
+      });
+      res.status(200).json(books);
+    } catch (error) {
+      console.error('Error fetching books by category:', error);
+      res.status(500).json({ message: 'Error fetching books by category' });
+    }
+  };

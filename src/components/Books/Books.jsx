@@ -4,23 +4,23 @@ import { AllBooksRoute } from '../../ApiRoute';
 import styled from 'styled-components';
 import BookCard from './BookCard';
 import SearchBar from './Search';
+
 const BookList = () => {
-  const [books, setBooks] = useState([]); // Initialize as an empty array
+  const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch books from the backend
   useEffect(() => {
-    axios.get(AllBooksRoute)
+    axios
+      .get(AllBooksRoute)
       .then((response) => {
         if (Array.isArray(response.data)) {
-          setBooks(response.data); // Set the array of books
+          setBooks(response.data);
         } else {
-            
           console.error('API response is not an array', response.data);
-          setBooks([]); // Fallback to an empty array if response is invalid
+          setBooks([]);
         }
-        setLoading(false); // Set loading to false
+        setLoading(false);
       })
       .catch((err) => {
         setError('Error fetching books');
@@ -28,45 +28,50 @@ const BookList = () => {
       });
   }, []);
 
-  if (loading) return <p>Loading books...</p>;
-
-  if (error) return <p>{error}</p>;
+  if (loading) return <Message>Loading books...</Message>;
+  if (error) return <Message>{error}</Message>;
 
   return (
-
-    <div>
+    <Container>
       <SearchBar />
-      {/* <h1>Books List</h1>
-      <ul>
-        {books.length > 0 ? (
-          books.map((book, index) => (
-            <li key={index}>
-               <p><strong>Title:</strong> {book.BookTitle}</p>
-              <p><strong>Author:</strong> {book.BookAuthor}</p>
-              <p><strong>Year:</strong> {book.YearOfPublication}</p>
-              <p><strong>Publisher:</strong> {book.Publisher}</p>
-              <img src={book.ImageURLS} alt={book.BookTitle} />
-            </li>
-          ))
-        ) : (
-          <p>No books available</p>
-        )}
-      </ul> */}
+      <Heading>Top Picks for You</Heading>
       <BooksContainer>
-      {books.map((book) => (
-        <BookCard key={book._id} book={book} />
-      ))}
-    </BooksContainer>
-    </div>
+        {books.map((book) => (
+          <BookCard key={book._id} book={book} />
+        ))}
+      </BooksContainer>
+    </Container>
   );
 };
 
 export default BookList;
 
+const Container = styled.div`
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const Heading = styled.h2`
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+`;
+
 const BooksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
-  gap: 16px;
+  gap: 20px;
+`;
+
+const Message = styled.p`
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
 `;

@@ -6,9 +6,10 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [categories, setCategories] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const navigate = useNavigate(); // For redirecting after successful registration
+  const navigate = useNavigate();
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -37,16 +38,19 @@ const Register = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ username, email, password, category: categories }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
+        // Store the username in localStorage
+        localStorage.setItem('username', username);
+
         setSuccessMessage('User registered successfully!');
         setTimeout(() => {
-          navigate('/login'); // Redirect to login page after success
-        }, 2000); // Navigate to login after 2 seconds
+          navigate('/login');
+        }, 2000);
       } else {
         setErrorMessage(data.message || 'Something went wrong');
       }
@@ -57,7 +61,7 @@ const Register = () => {
 
   return (
     <div className='min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center px-6 py-12'>
-      <div className='dark:bg-white bg-zinc-800 rounded-lg px-8 py-5 w-full max-w-lg '>
+      <div className='dark:bg-white bg-zinc-800 rounded-lg px-8 py-5 w-full max-w-lg'>
         <p className='font-semibold text-primary text-2xl text-center'>Sign Up</p>
         <form onSubmit={handleSubmit}>
           <div className='mt-6 space-y-6'>
@@ -83,6 +87,26 @@ const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+            </div>
+
+            <div className="mt-4">
+              <label htmlFor="categories" className="text-white dark:text-gray-900 font-semibold">
+                Favorite Category
+              </label>
+              <select
+                className="w-full mt-2 rounded-lg bg-zinc-900 dark:bg-zinc-200 text-white dark:text-black p-2 outline-none"
+                value={categories}
+                onChange={(e) => setCategories(e.target.value)}
+                required
+              >
+                <option value="" disabled>
+                  Select a category
+                </option>
+                <option value="horror">Horror</option>
+                <option value="comedy">Comedy</option>
+                <option value="fiction">Fiction</option>
+                <option value="romance">Romance</option>
+              </select>
             </div>
 
             <div className='mt-4'>
@@ -112,7 +136,7 @@ const Register = () => {
 
             <div>
               <button type='submit' className='w-full bg-primary dark:bg-secondary text-white font-semibold py-3 rounded-lg'>
-                SignUp
+                Sign Up
               </button>
             </div>
 

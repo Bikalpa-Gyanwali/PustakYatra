@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import About from './components/AboutUs/About';
@@ -8,30 +8,39 @@ import Register from './components/RegisterForm/Register';
 import Login from './components/RegisterForm/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import BookDetail from './components/Books/BookDetail';
-import BookList from './components/Books/Books';
 import TopBooks from './components/Books/TopBooks';
-import Recommend from './components/Books/Recommend';
+import Footer from './components/Navbar/Footer';
+
+const Layout = ({ children }) => {
+  const location = useLocation();
+  const excludeNavbarFooter = ['/dashboard'];
+
+  return (
+    <>
+      {!excludeNavbarFooter.some((path) => location.pathname.startsWith(path)) && <Navbar />}
+      {children}
+      {!excludeNavbarFooter.some((path) => location.pathname.startsWith(path)) && <Footer />}
+    </>
+  );
+};
+
 const App = () => {
   return (
     <Router>
-      <div>
-        <Navbar /> {/* Navbar stays common */}
+      <Layout>
         <Routes>
-          {/* Route to Home Page */}
           <Route path="/" element={<Home />} />
-          {/* Route to Other Pages */}
           <Route path="/about" element={<About />} />
           <Route path="/best-books" element={<BestBooks />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path='/dashboard' element={<Dashboard/>} />
-          <Route path='/books' element={<BookList/>} />
-          <Route path='/recommend' element={<Recommend />} />
           <Route path="/books/:bookId" element={<BookDetail />} />
-          <Route path='/books/topbooks' element={<TopBooks />} />
-           {/* New Route for Book Details */}
+          <Route path="/books/topbooks" element={<TopBooks />} />
+
+          {/* Dashboard Route */}
+          <Route path="/dashboard/*" element={<Dashboard />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
 };

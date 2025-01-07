@@ -1,14 +1,27 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Sidebar from '../Dashboard/Sidebar';
+import Recommend from '../Books/Recommend';
+import BookList from '../Books/Books';
+import Home from '../Dashboard/Home';
+import './Dashboard.css';
+import Categories from '../Dashboard/Categories';
 
 const Dashboard = () => {
-  const location = useLocation();
-  const { username } = location.state || { username: 'User' };
-
   return (
-    <div className='min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center px-6 py-12'>
-      <div className='bg-zinc-800 dark:bg-white rounded-lg px-8 py-10 w-full max-w-md text-center'>
-        <h1 className='text-2xl font-semibold text-primary dark:text-secondary'>Welcome, {username}!</h1>
+    <div className="dashboard-container flex flex-col lg:flex-row">
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Main Content */}
+      <div className="main-content flex-1 p-6 bg-gray-100">
+        {/* Routes for Dashboard */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/books" element={<BookList />} />
+          <Route path="/recommend" element={<Recommend />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
       </div>
     </div>
   );
