@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken'); // Add JWT for token-based auth
 const BookRoute = require('./routes/BookRoute.js');
 const topBooks = require('./routes/BookRoute.js')
 const BookIdInfo = require("./routes/BookRoute.js");
+const community = require('./routes/community.js');
 dotenv.config(); // Load environment variables
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use('/api', BookRoute)
 app.use('/api', BookIdInfo)
 app.use('/api', topBooks)
+app.use('/api', community);
 
 
 

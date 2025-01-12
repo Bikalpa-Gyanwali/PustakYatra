@@ -1,18 +1,33 @@
-
 import styled from "styled-components";
 import React, { useState } from 'react';
+import { BsHeartFill } from "react-icons/bs";
+import { FiBookmark } from "react-icons/fi";
 import { useEffect } from "react";
 
 import axios from "axios";
 
 
 
-const BookDetailCard = ({ book }) => {
- 
+const BookDetailCard = ({ book, onToggleFavorites, onToggleWishlist }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleFavoriteClick = () => {
+    setIsFavorite(!isFavorite);
+    const message = isFavorite ? "Removed from favourites" : "Added to favourites";
+    alert(message);
+    onToggleFavorites(book);
+  };
+
+  const handleWishlistClick = () => {
+    setIsWishlisted(!isWishlisted);
+    const message = isWishlisted ? "Removed from wishlist" : "Added to wishlist";
+    alert(message);
+    onToggleWishlist(book);
+  };
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -37,7 +52,22 @@ const BookDetailCard = ({ book }) => {
   if (error) return <p>{error}</p>;
   return (
     <Card>
-      <Title>{book.Title}</Title>
+
+      <TitleContainer>
+        <Title>{book.Title}</Title>
+        <IconContainer>
+          <BsHeartFill
+            color={isFavorite ? "red" : "gray"}
+            onClick={handleFavoriteClick}
+            style={{ cursor: "pointer", fontSize: "24px" }}
+          />
+          <FiBookmark
+            color={isWishlisted ? "blue" : "gray"}
+            onClick={handleWishlistClick}
+            style={{ cursor: "pointer", fontSize: "24px" }}
+          />
+        </IconContainer>
+      </TitleContainer>
       {book.image && <BookImage src={book.image} alt={`${book.Title} cover`} />}
 
       <Section>
@@ -157,3 +187,17 @@ const AdditionalInfo = styled.div`
   border-top: 1px solid #ddd;
 `;
 
+const IconContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+`;

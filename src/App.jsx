@@ -13,7 +13,8 @@ import Footer from './components/Navbar/Footer';
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const excludeNavbarFooter = ['/dashboard'];
+  const excludeNavbarFooter = ['/dashboard', '/books'];
+
 
   return (
     <>

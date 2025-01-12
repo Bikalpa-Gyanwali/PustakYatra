@@ -9,6 +9,12 @@ const BookCard = ({ book }) => {
         <Title>{book.BookTitle}</Title>
         <Author>By: {book.BookAuthor}</Author>
         <Year>Published: {book.YearOfPublication}</Year>
+        {book.averageRating && (
+          <Rating>Rating: ⭐ {book.averageRating.toFixed(1)}</Rating>
+        )}
+        {book.reviewCount && (
+          <Reviews>Total Reviews: 📚 {book.reviewCount}</Reviews>
+        )}
       </Info>
     </Card>
   );
@@ -16,6 +22,7 @@ const BookCard = ({ book }) => {
 
 export default BookCard;
 
+// Styled Components
 const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,4 +66,14 @@ const Author = styled.p`
 const Year = styled.p`
   font-size: 0.9rem;
   color: #777;
+`;
+
+const Rating = styled.p`
+  font-size: 0.9rem;
+  color: #f39c12;
+`;
+
+const Reviews = styled.p`
+  font-size: 0.9rem;
+  color: #3498db;
 `;

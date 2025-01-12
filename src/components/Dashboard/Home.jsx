@@ -4,6 +4,9 @@ import Recommend from '../Books/Recommend';
 
 function Home() {
   const [username, setUsername] = useState('');
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
+  const [wishlistBooks, setWishlistBooks] = useState([]);
+
 
   useEffect(() => {
     const storedUser = localStorage.getItem('username');
@@ -11,6 +14,14 @@ function Home() {
       setUsername(storedUser);
     }
   }, []);
+
+  const handleAddToFavorites = (book) => {
+    setFavoriteBooks((prev) => [...prev, book]);
+  };
+
+  const handleAddToWishlist = (book) => {
+    setWishlistBooks((prev) => [...prev, book]);
+  };
 
   return (
     <main className="main-container">
@@ -24,6 +35,7 @@ function Home() {
       </div>
 
       <div className="main-cards">
+
         <div className="card">
           <div className="card-inner">
             <h3>Books Read</h3>
@@ -31,6 +43,8 @@ function Home() {
           </div>
           <h1>52</h1>
         </div>
+
+
         <div className="card">
           <div className="card-inner">
             <h3>Genres Explored</h3>
@@ -38,20 +52,27 @@ function Home() {
           </div>
           <h1>15</h1>
         </div>
+
+
         <div className="card">
-          <div className="card-inner">
-            <h3>Favorites</h3>
-            <BsHeartFill className="card-icon" />
-          </div>
-          <h1>8</h1>
+          <h3>Favorites</h3>
+          <ul>
+            {favoriteBooks.map((book, index) => (
+              <li key={index}>{book.Title}</li>
+            ))}
+          </ul>
         </div>
+
+
         <div className="card">
-          <div className="card-inner">
-            <h3>Wishlist</h3>
-            <BsHeartFill className="card-icon" />
-          </div>
-          <h1>20</h1>
+          <h3>Wishlist</h3>
+          <ul>
+            {wishlistBooks.map((book, index) => (
+              <li key={index}>{book.Title}</li>
+            ))}
+          </ul>
         </div>
+        
       </div>
 
       <div className="recent-activities mt-8">

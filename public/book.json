@@ -13,7 +13,7 @@
       "_id": 2,
       "title": "Top 10 Fiction Books This Year",
       "description": "A curated list of the best fiction books that are trending this year.",
-      "category": "books",
+      "category": "foryou",
       "trending": true,
       "coverImage": "book-2.png",
       "oldPrice": 24.99,
@@ -23,7 +23,7 @@
       "_id": 3,
       "title": "Mastering SEO in 2024",
       "description": "Tips and tricks to boost your SEO and rank higher on search engines.",
-      "category": "marketing",
+      "category": "business",
       "trending": true,
       "coverImage": "book-3.png",
       "oldPrice": 39.99,
@@ -53,7 +53,7 @@
       "_id": 6,
       "title": "Ultimate Guide to Digital Marketing",
       "description": "A complete guide to digital marketing strategies for 2024.",
-      "category": "marketing",
+      "category": "business",
       "trending": false,
       "coverImage": "book-6.png",
       "oldPrice": 44.99,
@@ -198,6 +198,106 @@
       "coverImage": "book-20.png",
       "oldPrice": 24.99,
       "newPrice": 14.99
+    },
+    {
+      "_id": 21,
+      "title": "Love and Other Words",
+      "description": "A story of two childhood sweethearts whose paths cross once again in a romance that defies the odds.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-21.png",
+      "oldPrice": 19.99,
+      "newPrice": 13.99
+    },
+    {
+      "_id": 22,
+      "title": "The Silent Patient",
+      "description": "A woman shoots her husband in the face and then goes completely silent. A psychotherapist becomes obsessed with uncovering the truth behind her silence.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-22.png",
+      "oldPrice": 24.99,
+      "newPrice": 16.99
+    },
+    {
+      "_id": 23,
+      "title": "The Seven Husbands of Evelyn Hugo",
+      "description": "The story of an aging Hollywood star who agrees to tell the truth about her loves and losses.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-23.png",
+      "oldPrice": 27.99,
+      "newPrice": 18.99
+    },
+    {
+      "_id": 24,
+      "title": "The Midnight Library",
+      "description": "A library that allows people to explore alternate versions of their life. This book examines the choices we make and the ones we wish we had.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-24.png",
+      "oldPrice": 19.99,
+      "newPrice": 12.99
+    },
+    {
+      "_id": 25,
+      "title": "Where the Crawdads Sing",
+      "description": "A compelling mystery and coming-of-age story set in the swamps of North Carolina, where a young girl becomes a suspect in the murder of a local boy.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-25.png",
+      "oldPrice": 25.99,
+      "newPrice": 17.99
+    },
+    {
+      "_id": 26,
+      "title": "Educated",
+      "description": "A memoir of a woman who grows up in a survivalist family, cut off from the rest of society, and eventually escapes to pursue education.",
+      "category": "non-fiction",
+      "trending": true,
+      "coverImage": "book-26.png",
+      "oldPrice": 29.99,
+      "newPrice": 22.99
+    },
+    {
+      "_id": 27,
+      "title": "The Goldfinch",
+      "description": "A young boy survives a terrorist attack at a museum and steals a priceless painting, leading him down a dark and twisted path.",
+      "category": "fiction",
+      "trending": false,
+      "coverImage": "book-27.png",
+      "oldPrice": 39.99,
+      "newPrice": 28.99
+    },
+    {
+      "_id": 28,
+      "title": "Circe",
+      "description": "A retelling of the story of Circe, the enchantress from Greek mythology, who discovers her powers and challenges the gods themselves.",
+      "category": "non-fiction",
+      "trending": true,
+      "coverImage": "book-28.png",
+      "oldPrice": 32.99,
+      "newPrice": 24.99
+    },
+    {
+      "_id": 29,
+      "title": "Big Little Lies",
+      "description": "A darkly comic tale about a group of women whose seemingly perfect lives unravel after a murder at a school trivia night.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-29.png",
+      "oldPrice": 24.99,
+      "newPrice": 18.99
+    },
+    {
+      "_id": 30,
+      "title": "The Invisible Man",
+      "description": "A science fiction classic by H.G. Wells that tells the story of a scientist who discovers how to become invisible, with disastrous results.",
+      "category": "fiction",
+      "trending": false,
+      "coverImage": "book-30.png",
+      "oldPrice": 18.99,
+      "newPrice": 12.99
     }
   ]
   

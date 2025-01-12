@@ -86,11 +86,12 @@ const BestBooks = ({ handleOrderPopup }) => {
               onChange={handleGenreChange} // Update genre on selection
             >
               <option value="All">All Genres</option>
-              <option value="business">Business</option>
-              <option value="technology">Technology</option>
-              <option value="horror">Horror</option>
               <option value="fiction">Fiction</option>
+              <option value="business">Business</option>
               <option value="adventure">Adventure</option>
+              <option value="horror">Horror</option>
+              <option value="non-fiction">Non-Fiction</option>
+              
             </select>
           </div>
 

@@ -6,6 +6,10 @@ import BookList from '../Books/Books';
 import Home from '../Dashboard/Home';
 import './Dashboard.css';
 import Categories from '../Dashboard/Categories';
+import CategoriesList from './categorieslist';
+import Community from './Community';
+import BookDetail from '../Books/BookDetail';
+
 
 const Dashboard = () => {
   return (
@@ -21,6 +25,9 @@ const Dashboard = () => {
           <Route path="/books" element={<BookList />} />
           <Route path="/recommend" element={<Recommend />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/:categoryId" element={<CategoriesList />} />
+          <Route path="/categories/:categoryId/:subCategory" element={<CategoriesList />} />
+          <Route path="/communities" element={<Community />} />
         </Routes>
       </div>
     </div>

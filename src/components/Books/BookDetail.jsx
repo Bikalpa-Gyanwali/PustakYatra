@@ -4,49 +4,41 @@ import { useParams } from 'react-router-dom';
 import BookDetailCard from './InfoCard';
 import SearchBar from './Search';
 
-
-
 const BookDetail = () => {
-    const { bookId } = useParams();
+  const { bookId } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  
-    useEffect(() => {
-         
 
-        console.log("Book ID from URL:", bookId);
-        const fetchBookDetails = async () => {
-          try {
-            const response = await axios.get(`http://localhost:5000/api/books/${bookId}`);
-            setBook(response.data); 
-            console.log('Book state:', book); // Check the value of the book state
-// Set the book data
-          } catch (error) {
-            console.error("Error fetching book details:", error);
-            setError('Error fetching book details');
-          } finally {
-            setLoading(false);
-          }
-        };
-      
-        fetchBookDetails();
-      }, [bookId]);
-      // Include bookId in dependency array to refetch if it changes
+
+  useEffect(() => {
+    const fetchBookDetails = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/books/${bookId}`);
+        setBook(response.data);
+      } catch (error) {
+        console.error("Error fetching book details:", error);
+        setError('Error fetching book details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBookDetails();
+  }, [bookId]);
 
   if (loading) return <p>Loading book details...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <>
-    <SearchBar />
-    <div>
+      <SearchBar />
+      <div>
         {book ? <BookDetailCard book={book} /> : <p>Loading book details...</p>}
-    </div>
+      </div>
     </>
-    
-);
+  );
 };
 
 export default BookDetail;
