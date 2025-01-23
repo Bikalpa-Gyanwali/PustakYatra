@@ -24,6 +24,8 @@ const Login = () => {
       if (response.ok) {
         // Store the token in localStorage or sessionStorage
         localStorage.setItem('token', data.token);
+        localStorage.setItem("userId", data.id); // Store userId
+
 
         // Navigate to the dashboard with the username
         navigate('/dashboard', { state: { username: data.username } });

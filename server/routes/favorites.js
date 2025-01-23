@@ -1,12 +1,10 @@
-// backend/routes/favorites.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { addFavorite, getFavorites } = require('../controllers/favoritesController');
+const { authenticateToken } = require("../middleware/authMiddleware");
+const { addFavorite, getFavorites, removeFavorite } = require("../controller/favoritesController");
 
-// Add book to favorites
-router.post('/add', addFavorite);
-
-// Get all favorites
-router.get('/:userId', getFavorites);
+router.post("/add", authenticateToken, addFavorite);
+router.get("/", authenticateToken, getFavorites);
+router.delete("/:isbn", authenticateToken, removeFavorite);
 
 module.exports = router;

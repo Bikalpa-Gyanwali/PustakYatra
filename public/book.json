@@ -298,6 +298,307 @@
       "coverImage": "book-30.png",
       "oldPrice": 18.99,
       "newPrice": 12.99
-    }
+    },
+    {
+      "_id": 31,
+      "title": "The Song of Achilles",
+      "description": "A beautifully retold story of the relationship between Achilles and Patroclus, exploring themes of love, fate, and heroism.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-31.png",
+      "oldPrice": 22.99,
+      "newPrice": 15.99
+    },
+    {
+      "_id": 32,
+      "title": "Anxious People",
+      "description": "A quirky and heartwarming story about a group of strangers who become involved in a hostage situation, which turns into an exploration of human nature.",
+      "category": "fiction",
+      "trending": false,
+      "coverImage": "book-32.png",
+      "oldPrice": 24.99,
+      "newPrice": 18.99
+    },
+    {
+      "_id": 33,
+      "title": "The Ocean at the End of the Lane",
+      "description": "A man revisits his childhood home and recalls strange events from his past, including encounters with a mysterious girl and dark forces.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-33.png",
+      "oldPrice": 27.99,
+      "newPrice": 19.99
+    },
+    {
+      "_id": 34,
+      "title": "The Night Circus",
+      "description": "A magical and atmospheric novel about a competition between two magicians who create a fantastical circus that only opens at night.",
+      "category": "adventure",
+      "trending": false,
+      "coverImage": "book-34.png",
+      "oldPrice": 29.99,
+      "newPrice": 22.99
+    },
+    {
+      "_id": 35,
+      "title": "A Little Life",
+      "description": "A story of friendship, love, and trauma, following four college friends through their complicated and often painful lives.",
+      "category": "fiction",
+      "trending": true,
+      "coverImage": "book-35.png",
+      "oldPrice": 32.99,
+      "newPrice": 24.99
+    },
+    {
+      "_id": 36,
+      "title": "All the Light We Cannot See",
+      "description": "Set during World War II, this story follows a blind French girl and a German soldier as their lives become intertwined in the midst of the war.",
+      "category": "non-fiction",
+      "trending": true,
+      "coverImage": "book-36.png",
+      "oldPrice": 24.99,
+      "newPrice": 18.99
+    },
+      {
+          "_id": 37,
+          "title": "The Night Watchman",
+          "description": "A historical novel set in the 1950s that tells the story of a Native American man fighting against the U.S. government’s efforts to displace his people.",
+          "category": "non-fiction",
+          "trending": false,
+          "coverImage": "book-37.png",
+          "oldPrice": 28.99,
+          "newPrice": 21.99
+      },
+      {
+          "_id": 38,
+          "title": "The Shadow of the Wind",
+          "description": "A young boy becomes obsessed with a forgotten author whose books are being mysteriously destroyed, uncovering a dark secret in the process.",
+          "category": "horror",
+          "trending": true,
+          "coverImage": "book-38.png",
+          "oldPrice": 29.99,
+          "newPrice": 23.99
+      },
+      {
+          "_id": 39,
+          "title": "The House in the Cerulean Sea",
+          "description": "A heartwarming fantasy novel about a government worker who is assigned to inspect an orphanage for magical children, only to discover something extraordinary.",
+          "category": "fantasy",
+          "trending": true,
+          "coverImage": "book-39.png",
+          "oldPrice": 26.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 40,
+          "title": "The Nightingale",
+          "description": "A gripping and emotional story of two sisters in France during World War II and their differing paths through the war.",
+          "category": "non-fiction",
+          "trending": false,
+          "coverImage": "book-40.png",
+          "oldPrice": 32.99,
+          "newPrice": 25.99
+      },
+      {
+          "_id": 41,
+          "title": "Dracula",
+          "description": "The classic tale of the vampire Count Dracula and his journey to spread darkness and despair.",
+          "category": "horror",
+          "trending": true,
+          "coverImage": "book-41.jpg",
+          "oldPrice": 24.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 42,
+          "title": "Frankenstein",
+          "description": "The chilling story of Victor Frankenstein and the monstrous creation that torments him.",
+          "category": "horror",
+          "trending": false,
+          "coverImage": "book-42.jpg",
+          "oldPrice": 22.99,
+          "newPrice": 18.99
+      },
+      {
+          "_id": 43,
+          "title": "Pet Sematary",
+          "description": "A terrifying tale about a burial ground that brings the dead back to life—but at a horrible cost.",
+          "category": "horror",
+          "trending": true,
+          "coverImage": "book-43.jpg",
+          "oldPrice": 27.99,
+          "newPrice": 21.99
+      },
+      {
+          "_id": 44,
+          "title": "The Shining",
+          "description": "A suspenseful story of a family stranded in a haunted hotel during a harsh winter.",
+          "category": "horror",
+          "trending": true,
+          "coverImage": "book-44.jpg",
+          "oldPrice": 25.99,
+          "newPrice": 20.99
+      },
+      {
+          "_id": 45,
+          "title": "The Haunting of Hill House",
+          "description": "A chilling story of four strangers who explore a sinister mansion with a dark history.",
+          "category": "horror",
+          "trending": false,
+          "coverImage": "book-45.jpg",
+          "oldPrice": 23.99,
+          "newPrice": 18.99
+      },
+      {
+          "_id": 46,
+          "title": "The Turn of the Screw",
+          "description": "A gothic novella about a governess who takes care of two children at a haunted estate.",
+          "category": "horror",
+          "trending": false,
+          "coverImage": "book-46.jpg",
+          "oldPrice": 19.99,
+          "newPrice": 14.99
+      },
+      {
+          "_id": 47,
+          "title": "Bird Box",
+          "description": "A thrilling post-apocalyptic tale about creatures that drive people to madness and death if seen.",
+          "category": "horror",
+          "trending": true,
+          "coverImage": "book-47.jpg",
+          "oldPrice": 26.99,
+          "newPrice": 20.99
+      },
+      {
+          "_id": 48,
+          "title": "The Road",
+          "description": "A harrowing tale of a father and son journeying through a post-apocalyptic landscape.",
+          "category": "adventure",
+          "trending": true,
+          "coverImage": "book-48.jpg",
+          "oldPrice": 29.99,
+          "newPrice": 22.99
+      },
+      {
+          "_id": 49,
+          "title": "Into the Wild",
+          "description": "The true story of Christopher McCandless and his journey into the Alaskan wilderness.",
+          "category": "adventure",
+          "trending": false,
+          "coverImage": "book-49.jpg",
+          "oldPrice": 24.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 50,
+          "title": "The Hobbit",
+          "description": "The adventure of Bilbo Baggins as he journeys to the Lonely Mountain to reclaim treasure.",
+          "category": "adventure",
+          "trending": true,
+          "coverImage": "book-50.jpg",
+          "oldPrice": 27.99,
+          "newPrice": 21.99
+      },
+      {
+          "_id": 51,
+          "title": "Life of Pi",
+          "description": "A captivating story of survival and self-discovery during a boy's journey at sea with a tiger.",
+          "category": "adventure",
+          "trending": true,
+          "coverImage": "book-51.jpg",
+          "oldPrice": 26.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 52,
+          "title": "Treasure Island",
+          "description": "A thrilling tale of pirates, buried treasure, and adventure on the high seas.",
+          "category": "adventure",
+          "trending": true,
+          "coverImage": "book-52.jpg",
+          "oldPrice": 23.99,
+          "newPrice": 18.99
+      },
+      {
+          "_id": 53,
+          "title": "Wild",
+          "description": "A memoir of Cheryl Strayed's journey of self-discovery on the Pacific Crest Trail.",
+          "category": "adventure",
+          "trending": false,
+          "coverImage": "book-53.jpg",
+          "oldPrice": 22.99,
+          "newPrice": 17.99
+      },
+      {
+          "_id": 54,
+          "title": "Endurance",
+          "description": "The incredible true story of Ernest Shackleton's survival in Antarctica.",
+          "category": "adventure",
+          "trending": true,
+          "coverImage": "book-54.jpg",
+          "oldPrice": 29.99,
+          "newPrice": 23.99
+      },
+      {
+          "_id": 55,
+          "title": "Sapiens",
+          "description": "A thought-provoking exploration of the history of humankind.",
+          "category": "non-fiction",
+          "trending": true,
+          "coverImage": "book-55.jpg",
+          "oldPrice": 31.99,
+          "newPrice": 25.99
+      },
+      {
+          "_id": 56,
+          "title": "The Lean Startup",
+          "description": "A guide for entrepreneurs to build successful startups by testing ideas and adapting quickly.",
+          "category": "business",
+          "trending": true,
+          "coverImage": "book-56.jpg",
+          "oldPrice": 27.99,
+          "newPrice": 21.99
+      },
+      {
+          "_id": 57,
+          "title": "Rich Dad Poor Dad",
+          "description": "A personal finance classic that explores the differences in mindset between the rich and the poor.",
+          "category": "business",
+          "trending": true,
+          "coverImage": "book-57.jpg",
+          "oldPrice": 24.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 58,
+          "title": "The Intelligent Investor",
+          "description": "A timeless book on value investing by Benjamin Graham.",
+          "category": "business",
+          "trending": false,
+          "coverImage": "book-58.jpg",
+          "oldPrice": 29.99,
+          "newPrice": 24.99
+      },
+      {
+          "_id": 59,
+          "title": "Think and Grow Rich",
+          "description": "Napoleon Hill's classic on personal success and financial independence.",
+          "category": "business",
+          "trending": true,
+          "coverImage": "book-59.jpg",
+          "oldPrice": 25.99,
+          "newPrice": 19.99
+      },
+      {
+          "_id": 60,
+          "title": "Start with Why",
+          "description": "Simon Sinek explores the importance of finding purpose in work and leadership.",
+          "category": "business",
+          "trending": true,
+          "coverImage": "book-60.jpg",
+          "oldPrice": 26.99,
+          "newPrice": 20.99
+      }
   ]
+  
   

@@ -9,13 +9,13 @@ from fuzzywuzzy import process  # Import fuzzywuzzy for partial matching
 print("Current working directory:", os.getcwd())
 
 app = Flask(__name__)
-with open('server/model/pt.pkl', 'rb') as f:
+with open('model/pt.pkl', 'rb') as f:
     pt = pickle.load(f)
 
-with open('server/model/books.pkl', 'rb') as f:
+with open('model/books.pkl', 'rb') as f:
     books = pickle.load(f)
 
-with open('server/model/similarity_scores.pkl', 'rb') as f:
+with open('model/similarity_scores.pkl', 'rb') as f:
     similarity_scores = pickle.load(f)
 
 # More explicit CORS configuration

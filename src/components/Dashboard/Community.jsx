@@ -15,6 +15,9 @@ const Community = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false); // State for loading indicator
+  const postsPerPage = 2;
 
   // Fetch all posts
   const fetchPosts = async () => {
@@ -45,7 +48,7 @@ const Community = () => {
           content: newPost,
         };
 
-        const response = await axios.post(AddPostRoute, newPostData);
+        await axios.post(AddPostRoute, newPostData);
         setNewPost(""); // Clear the input fields
         setBookName("");
         fetchPosts(); // Refresh the list of posts after adding a new one
@@ -80,6 +83,17 @@ const Community = () => {
 
   const handleResultClick = (bookId) => {
     navigate(`/books/${bookId}`);
+  };
+
+  // Pagination logic
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => {
+    setIsLoading(true);
+    setCurrentPage(pageNumber);
+    setTimeout(() => setIsLoading(false), 500); // Simulate a short delay
   };
 
   return (
@@ -148,19 +162,44 @@ const Community = () => {
         {/* Discussions */}
         <div className="discussion-board">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Discussions</h2>
-          {posts.map((post) => (
-            <div
-              key={post._id}
-              className="post-card bg-white p-6 rounded-lg shadow-md mb-6"
-            >
-              <h3 className="font-bold text-lg text-gray-700">{post.author}</h3>
-              <p className="text-sm text-gray-500 mb-2">Book: {post.bookName}</p>
-              <p className="text-gray-600">{post.content}</p>
-              <p className="text-sm text-gray-400 mt-2">
-                Posted on: {new Date(post.createdAt).toLocaleString()}
-              </p>
+          {isLoading ? (
+            <div className="text-center text-gray-500">Loading...</div>
+          ) : (
+            currentPosts.map((post) => (
+              <div
+                key={post._id}
+                className="post-card bg-white p-6 rounded-lg shadow-md mb-6"
+              >
+                <h3 className="font-bold text-lg text-blue-700">{post.author}</h3>
+                <p className="text-sm text-gray-500 mb-2">Book: <span className="font-medium text-blue-600">{post.bookName}</span></p>
+                <p className="text-gray-600">{post.content}</p>
+                <p className="text-sm text-gray-400 mt-2">
+                  Posted on: {new Date(post.createdAt).toLocaleString()}
+                </p>
+              </div>
+            ))
+          )}
+          {/* Pagination Controls */}
+          {posts.length > postsPerPage && (
+            <div className="pagination flex justify-center items-center mt-6">
+              {Array.from(
+                { length: Math.ceil(posts.length / postsPerPage) },
+                (_, index) => (
+                  <button
+                    key={index + 1}
+                    onClick={() => paginate(index + 1)}
+                    className={`px-4 py-2 mx-1 rounded-lg ${
+                      currentPage === index + 1
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 text-gray-700"
+                    } hover:bg-blue-400 hover:text-white`}
+                  >
+                    {index + 1}
+                  </button>
+                )
+              )}
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>

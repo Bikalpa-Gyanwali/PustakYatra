@@ -58,9 +58,10 @@ const Recommend = () => {
           placeholder="Enter a book title..."
           value={bookTitle}
           onChange={handleChange}
-          className="w-full max-w-lg p-4 text-lg border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full max-w-lg p-4 text-lg border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
         />
       </div>
+
 
       {/* Button */}
       <button

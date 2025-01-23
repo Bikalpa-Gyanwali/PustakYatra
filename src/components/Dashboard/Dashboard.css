@@ -255,6 +255,120 @@
   }
 }
 
+/* Add these at the end of your existing CSS file */
+.favorites-card {
+  background-color: #e91e63 !important; /* Pink color for favorites */
+  position: relative;
+  overflow: hidden;
+}
+
+.favorites-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.favorites-card:hover::after {
+  opacity: 1;
+}
+
+.favorites-expanded {
+  animation: slideIn 0.3s ease-out;
+}
+
+.wishlist-card {
+  background-color: #9c27b0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.wishlist-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wishlist-card:hover::after {
+  opacity: 1;
+}
+
+.wishlist-expanded {
+  animation: slideIn 0.3s ease-out;
+}
+
+.book-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section {
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.main-cards {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 /* Extra Small <= 576px */
 
 @media screen and (max-width: 576px) {

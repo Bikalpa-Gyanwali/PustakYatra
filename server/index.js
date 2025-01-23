@@ -10,17 +10,27 @@ const BookRoute = require('./routes/BookRoute.js');
 const topBooks = require('./routes/BookRoute.js')
 const BookIdInfo = require("./routes/BookRoute.js");
 const community = require('./routes/community.js');
+const favoritesRoutes = require("./routes/favorites.js");
+const wishlistRoutes = require("./routes/wishlist.js");
+
+
 dotenv.config(); // Load environment variables
+
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173", // Allow only this origin
-    methods: ["GET", "POST"], // Specify allowed methods
-    credentials: true // Allow credentials if needed
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "DELETE"], // Added DELETE
+    credentials: true
 }));
+
 app.use(express.json());
-app.use('/api', BookRoute)
-app.use('/api', BookIdInfo)
+
+// Routes
+app.use("/api/books", BookRoute);
+app.use("/api/favorites", favoritesRoutes);
+app.use("/api/wishlist", wishlistRoutes);
+
 app.use('/api', topBooks)
 app.use('/api', community);
 
