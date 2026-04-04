@@ -17,4 +17,4 @@ This project was developed as a group project. GitHub was added after the initia
 - Bikalpa Gyanwali
 
 ## My Role
-Bikalpa Gyanwali contributed primarily to the frontend development of this project.
+I contributed primarily to the frontend development of this project.
