@@ -1,8 +1,20 @@
-# React + Vite
+# PustakYatra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PustakYatra is a book discovery web application built to help users search for books, explore book details, discover recommendations, save favorites and wishlist items, and take part in a reader community.
 
-Currently, two official plugins are available:
+## Tech Stack
+- Frontend: React, Vite, Tailwind CSS
+- Backend: Express.js, MongoDB
+- Recommendation System: Python, Flask
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Note
+This project was developed as a group project. GitHub was added after the initial development phase, so the commit history may not fully represent each member's contribution.
+
+## Team
+- Saroj Poudel
+- Anjua Kafle
+- Rohit Mandal
+- Bikalpa Gyanwali
+
+## My Role
+Bikalpa Gyanwali contributed primarily to the frontend development of this project.
